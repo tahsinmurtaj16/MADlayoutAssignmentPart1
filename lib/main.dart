@@ -15,14 +15,13 @@ class MyApp extends StatelessWidget {
               title: Text("Home"),
             ),
             body: GridView.count(
-                crossAxisCount: 3,
-                crossAxisSpacing: 4.0,
-                mainAxisSpacing: 8.0,
-                children: List.generate(choices.length, (index) {
-                  return Center(
-                    child: SelectCard(choice: choices[index]),
-                  );
-                }))));
+              crossAxisCount: 3,
+              crossAxisSpacing: 4.0,
+              mainAxisSpacing: 8.0,
+              children: choices.map((device) {
+                return Controller(device);
+              }).toList(),
+            )));
   }
 }
 
